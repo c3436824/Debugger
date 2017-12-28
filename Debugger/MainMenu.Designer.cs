@@ -1,6 +1,6 @@
 ﻿namespace Debugger
 {
-    partial class Form1
+    partial class mainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -41,6 +41,7 @@
             this.btnBBT.TabIndex = 0;
             this.btnBBT.Text = "Black Box Tester";
             this.btnBBT.UseVisualStyleBackColor = true;
+            this.btnBBT.Click += new System.EventHandler(this.btnBBT_Click);
             // 
             // btnWBT
             // 
@@ -50,6 +51,7 @@
             this.btnWBT.TabIndex = 1;
             this.btnWBT.Text = "White Box Tester";
             this.btnWBT.UseVisualStyleBackColor = true;
+            this.btnWBT.Click += new System.EventHandler(this.btnWBT_Click);
             // 
             // btnPro
             // 
@@ -59,8 +61,9 @@
             this.btnPro.TabIndex = 2;
             this.btnPro.Text = "Programmer";
             this.btnPro.UseVisualStyleBackColor = true;
+            this.btnPro.Click += new System.EventHandler(this.btnPro_Click);
             // 
-            // Form1
+            // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -68,9 +71,9 @@
             this.Controls.Add(this.btnPro);
             this.Controls.Add(this.btnWBT);
             this.Controls.Add(this.btnBBT);
-            this.Name = "Form1";
+            this.Name = "mainMenu";
             this.Text = "Main Menu";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.mainMenu_FormClosed);
             this.ResumeLayout(false);
 
         }

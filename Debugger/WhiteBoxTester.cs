@@ -16,5 +16,19 @@ namespace Debugger
         {
             InitializeComponent();
         }
+
+        private void btnBackWBT_Click(object sender, EventArgs e)                        //Switch back to main menu form
+        {
+            this.Hide();
+            mainMenu main = new mainMenu();
+            main.ShowDialog();
+        }
+
+        private void WhiteBoxTester_FormClosed(object sender, FormClosedEventArgs e)    // 
+        {
+            this.Hide();
+            mainMenu main = new mainMenu();
+            main.ShowDialog();
+        }
     }
 }

@@ -16,5 +16,19 @@ namespace Debugger
         {
             InitializeComponent();
         }
+
+        private void btnBackPro_Click(object sender, EventArgs e)         // switch back too main menu
+        {
+            this.Hide();
+            mainMenu main = new mainMenu();
+            main.ShowDialog();
+        }
+
+        private void Programmer_FormClosed(object sender, FormClosedEventArgs e)  // switch back to the main menu
+        {
+            this.Hide();
+            mainMenu main = new mainMenu();
+            main.ShowDialog();
+        }
     }
 }

@@ -10,16 +10,38 @@ using System.Windows.Forms;
 
 namespace Debugger
 {
-    public partial class Form1 : Form
+    public partial class mainMenu : Form
     {
-        public Form1()
+        public mainMenu()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnBBT_Click(object sender, EventArgs e)    //Switch too black box tester form  
         {
+            this.Hide();
+            BlackBoxTester BBT = new BlackBoxTester();
+            BBT.ShowDialog();
+        }
 
+        private void btnWBT_Click(object sender, EventArgs e)    //Switch too white box tester form
+        {
+            this.Hide();
+            WhiteBoxTester WBT = new WhiteBoxTester();
+            WBT.ShowDialog();
+        }
+
+        private void btnPro_Click(object sender, EventArgs e)     //Switch too Programmer form 
+        {
+            this.Hide();
+            Programmer Pro = new Programmer();
+            Pro.ShowDialog();
+
+        }
+
+        private void mainMenu_FormClosed(object sender, FormClosedEventArgs e)  // Closed the Application completely
+        {
+            Application.Exit();
         }
     }
 }

@@ -56,12 +56,18 @@ namespace Debugger
                         command.ExecuteNonQuery();
                         insertConection.Close();
                         MessageBox.Show("Bug Added");
+                        txtAppName.Text = "";
+                        txtBugID.Text = "";
+                        txtBugSym.Text = "";
+                        txtBugTrig.Text = "";
+
+
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Please Fill In All Fields!");
+                MessageBox.Show("Please Fill In All Fields (*)");
             }
         }
 

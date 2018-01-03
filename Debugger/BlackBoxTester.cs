@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace Debugger
 {
     public partial class BlackBoxTester : Form
     {
-       
+
         public BlackBoxTester()
         {
             InitializeComponent();
-            
+
         }
 
         private void btnBackBBT_Click(object sender, EventArgs e)        // Go back to the home page
@@ -27,26 +28,28 @@ namespace Debugger
             main.ShowDialog();
         }
 
-        private void BlackBoxTester_FormClosed(object sender, FormClosedEventArgs e)
+        private void BlackBoxTester_FormClosed(object sender, FormClosedEventArgs e)    // close application 
         {
-            this.Hide();
-            mainMenu main = new mainMenu();
-            main.ShowDialog();
+            Application.Exit();
         }
 
         private void btnAddBug_Click(object sender, EventArgs e)
         {
-                  
-            String bugId = txtBugID.Text;
+
+            
             String appName = txtAppName.Text;
             String bugSym = txtBugSym.Text;
             String bugTrig = txtBugTrig.Text;
+            String[] data = new String[100];
 
-            if (bugId != "" && appName != "" && bugSym != "" && bugTrig != "")
-            { 
+
+            if (appName != "" && bugSym != "" && bugTrig != "")
+            {
+
+
                 String SqlCon = (@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = F:\vs\Debugger\BugDatabase.mdf; Integrated Security = True; Connect Timeout = 30");   // point to the locaton of the database
-                String insert = "INSERT INTO BugTable (BugID, ApplicationName, BugSymptoms, BugTrigger)" + "Values('" + bugId + "','" + appName + "','" + bugSym + "','" + bugTrig + "')";
-              
+                String insert = "INSERT INTO BugTable (ApplicationName, BugSymptoms, BugTrigger)" + "Values('" + appName + "','" + bugSym + "','" + bugTrig + "')";
+
                 using (SqlConnection insertConection = new SqlConnection(SqlCon))
                 {
 
@@ -57,19 +60,26 @@ namespace Debugger
                         insertConection.Close();
                         MessageBox.Show("Bug Added");
                         txtAppName.Text = "";
-                        txtBugID.Text = "";
                         txtBugSym.Text = "";
                         txtBugTrig.Text = "";
-
-
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Please Fill In All Fields (*)");
+                MessageBox.Show("please fill in all fileds ");
             }
-        }
 
+
+        }
+            
+
+
+
+        
+
+       
+
+       
     }
 }

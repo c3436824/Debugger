@@ -43,16 +43,23 @@ namespace Debugger
         {
             lbSymptoms.Items.Clear();
             lbTrigger.Items.Clear();
-            txtBugIdWBT.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[0].Value.ToString();                                   
-            lblAppName.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[1].Value.ToString();
-            lbSymptoms.Items.Add( dgvBugsWBT.Rows[e.RowIndex].Cells[2].Value.ToString());
-            lbTrigger.Items.Add( dgvBugsWBT.Rows[e.RowIndex].Cells[3].Value.ToString());
-            txtProjectName.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtSourceFile.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[5].Value.ToString();
-            txtClassName.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[6].Value.ToString();
-            txtLineNumber.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[7].Value.ToString();
-            txtMethod.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[8].Value.ToString();
 
+            if (e.RowIndex != -1)
+            {
+                txtBugIdWBT.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[0].Value.ToString();
+                lblAppName.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[1].Value.ToString();
+                lbSymptoms.Items.Add(dgvBugsWBT.Rows[e.RowIndex].Cells[2].Value.ToString());
+                lbTrigger.Items.Add(dgvBugsWBT.Rows[e.RowIndex].Cells[3].Value.ToString());
+                txtProjectName.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[4].Value.ToString();
+                txtSourceFile.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtClassName.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[6].Value.ToString();
+                txtLineNumber.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[7].Value.ToString();
+                txtMethod.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[8].Value.ToString();
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -103,20 +110,19 @@ namespace Debugger
                 String lineNumber = txtLineNumber.Text;
                 String method = txtMethod.Text;
                 String bugID = txtBugIdWBT.Text;
+                String codeAuthor = txtCodeAuthor.Text;
 
                 SqlConnection sqlCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\vs\Debugger\BugDatabase.mdf;Integrated Security=True;Connect Timeout=30");
                 sqlCon.Open();
-                SqlCommand addInfo = new SqlCommand("UPDATE BugTable SET ProjectName ='" + projectName + "', SourceFile = '" + sourceFile + "', ClassName = '" + className + "' ,LineNumber = '" + lineNumber + "', Mehtod = '" + method + "' WHERE (BugID ='" + bugID + "')", sqlCon);
+                SqlCommand addInfo = new SqlCommand("UPDATE BugTable SET ProjectName ='" + projectName + "', SourceFile = '" + sourceFile + "', ClassName = '" + className + "' ,LineNumber = '" + lineNumber + "', Mehtod = '" + method + "', CodeAuthor = '" + codeAuthor + "' WHERE (BugID ='" + bugID + "')", sqlCon);
                 addInfo.ExecuteNonQuery();
                 sqlCon.Close();
-                MessageBox.Show("Adition information has been added");
+                MessageBox.Show("Adition information has been added to Bug ID: "+ bugID);
             }
             else
             {
                 MessageBox.Show("PLEASE ENTER OR SELECT THE BUG ID THAT YOU WISH TO EDIT ");
             }
-
-
 
 
 
@@ -127,5 +133,16 @@ namespace Debugger
         {
             Application.Exit();
         }
+
+        private void txtLineNumber_KeyPress(object sender, KeyPressEventArgs e)                        // only allow didgits  to be entered into the line txt field
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+       
     }
 }

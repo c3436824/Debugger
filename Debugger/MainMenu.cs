@@ -34,7 +34,7 @@ namespace Debugger
         private void btnPro_Click(object sender, EventArgs e)     //Switch too Programmer form 
         {
             this.Hide();
-            Programmer Pro = new Programmer();
+            Developer Pro = new Developer();
             Pro.ShowDialog();
 
         }

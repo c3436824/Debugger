@@ -32,14 +32,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtAppName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtBugID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBugSym = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBugTrig = new System.Windows.Forms.TextBox();
             this.btnAddBug = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBackBBT
@@ -75,22 +74,6 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "* Bug ID:  ";
-            // 
-            // txtBugID
-            // 
-            this.txtBugID.Location = new System.Drawing.Point(130, 6);
-            this.txtBugID.Name = "txtBugID";
-            this.txtBugID.Size = new System.Drawing.Size(130, 20);
-            this.txtBugID.TabIndex = 5;
             // 
             // label4
             // 
@@ -142,19 +125,27 @@
             this.btnAddBug.UseVisualStyleBackColor = true;
             this.btnAddBug.Click += new System.EventHandler(this.btnAddBug_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(232, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "To report a bug please fill in the following fields: ";
+            // 
             // BlackBoxTester
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAddBug);
             this.Controls.Add(this.txtBugTrig);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtBugSym);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtBugID);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAppName);
             this.Controls.Add(this.label1);
@@ -173,13 +164,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAppName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtBugID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtBugSym;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBugTrig;
         private System.Windows.Forms.Button btnAddBug;
+        private System.Windows.Forms.Label label3;
     }
 }

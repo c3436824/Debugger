@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Debugger
 {
-    public partial class Programmer : Form
+    public partial class Developer : Form
     {
-        public Programmer()
+        public Developer()
         {
             InitializeComponent();
         }

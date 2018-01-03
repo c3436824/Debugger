@@ -30,7 +30,7 @@
         {
             this.btnBBT = new System.Windows.Forms.Button();
             this.btnWBT = new System.Windows.Forms.Button();
-            this.btnPro = new System.Windows.Forms.Button();
+            this.btnDeveloper = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBBT
@@ -53,22 +53,22 @@
             this.btnWBT.UseVisualStyleBackColor = true;
             this.btnWBT.Click += new System.EventHandler(this.btnWBT_Click);
             // 
-            // btnPro
+            // btnDeveloper
             // 
-            this.btnPro.Location = new System.Drawing.Point(70, 159);
-            this.btnPro.Name = "btnPro";
-            this.btnPro.Size = new System.Drawing.Size(139, 50);
-            this.btnPro.TabIndex = 2;
-            this.btnPro.Text = "Programmer";
-            this.btnPro.UseVisualStyleBackColor = true;
-            this.btnPro.Click += new System.EventHandler(this.btnPro_Click);
+            this.btnDeveloper.Location = new System.Drawing.Point(70, 159);
+            this.btnDeveloper.Name = "btnDeveloper";
+            this.btnDeveloper.Size = new System.Drawing.Size(139, 50);
+            this.btnDeveloper.TabIndex = 2;
+            this.btnDeveloper.Text = "Developer";
+            this.btnDeveloper.UseVisualStyleBackColor = true;
+            this.btnDeveloper.Click += new System.EventHandler(this.btnPro_Click);
             // 
             // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.btnPro);
+            this.Controls.Add(this.btnDeveloper);
             this.Controls.Add(this.btnWBT);
             this.Controls.Add(this.btnBBT);
             this.Name = "mainMenu";
@@ -82,7 +82,7 @@
 
         private System.Windows.Forms.Button btnBBT;
         private System.Windows.Forms.Button btnWBT;
-        private System.Windows.Forms.Button btnPro;
+        private System.Windows.Forms.Button btnDeveloper;
     }
 }
 

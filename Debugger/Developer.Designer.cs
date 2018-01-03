@@ -29,18 +29,21 @@
         private void InitializeComponent()
         {
             this.btnBackPro = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewDeveloper = new System.Windows.Forms.DataGridView();
             this.btnDisplayBugs = new System.Windows.Forms.Button();
             this.lsBug = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtDate = new System.Windows.Forms.TextBox();
+            this.txtComent = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnFixAndArchive = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtBugID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Date = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeveloper)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBackPro
@@ -53,13 +56,14 @@
             this.btnBackPro.UseVisualStyleBackColor = true;
             this.btnBackPro.Click += new System.EventHandler(this.btnBackPro_Click);
             // 
-            // dataGridView1
+            // dataGridViewDeveloper
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(855, 218);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridViewDeveloper.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDeveloper.Location = new System.Drawing.Point(12, 21);
+            this.dataGridViewDeveloper.Name = "dataGridViewDeveloper";
+            this.dataGridViewDeveloper.Size = new System.Drawing.Size(855, 218);
+            this.dataGridViewDeveloper.TabIndex = 1;
+            this.dataGridViewDeveloper.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // btnDisplayBugs
             // 
@@ -69,6 +73,7 @@
             this.btnDisplayBugs.TabIndex = 2;
             this.btnDisplayBugs.Text = "Display Bugs ";
             this.btnDisplayBugs.UseVisualStyleBackColor = true;
+            this.btnDisplayBugs.Click += new System.EventHandler(this.btnDisplayBugs_Click);
             // 
             // lsBug
             // 
@@ -78,26 +83,26 @@
             this.lsBug.Size = new System.Drawing.Size(231, 277);
             this.lsBug.TabIndex = 3;
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(269, 293);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtName.Location = new System.Drawing.Point(385, 291);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(155, 20);
+            this.txtName.TabIndex = 4;
             // 
-            // textBox2
+            // txtDate
             // 
-            this.textBox2.Location = new System.Drawing.Point(269, 319);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(155, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtDate.Location = new System.Drawing.Point(385, 317);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(155, 20);
+            this.txtDate.TabIndex = 5;
             // 
-            // textBox3
+            // txtComent
             // 
-            this.textBox3.Location = new System.Drawing.Point(269, 345);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(155, 20);
-            this.textBox3.TabIndex = 6;
+            this.txtComent.Location = new System.Drawing.Point(385, 343);
+            this.txtComent.Name = "txtComent";
+            this.txtComent.Size = new System.Drawing.Size(155, 20);
+            this.txtComent.TabIndex = 6;
             // 
             // btnSearch
             // 
@@ -107,15 +112,17 @@
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Search ";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // button2
+            // btnFixAndArchive
             // 
-            this.button2.Location = new System.Drawing.Point(269, 371);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Fix and Archive";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnFixAndArchive.Location = new System.Drawing.Point(269, 371);
+            this.btnFixAndArchive.Name = "btnFixAndArchive";
+            this.btnFixAndArchive.Size = new System.Drawing.Size(102, 23);
+            this.btnFixAndArchive.TabIndex = 8;
+            this.btnFixAndArchive.Text = "Fix and Archive";
+            this.btnFixAndArchive.UseVisualStyleBackColor = true;
+            this.btnFixAndArchive.Click += new System.EventHandler(this.btnFixAndArchive_Click);
             // 
             // btnDelete
             // 
@@ -128,7 +135,7 @@
             // 
             // txtBugID
             // 
-            this.txtBugID.Location = new System.Drawing.Point(933, 138);
+            this.txtBugID.Location = new System.Drawing.Point(385, 265);
             this.txtBugID.Name = "txtBugID";
             this.txtBugID.Size = new System.Drawing.Size(75, 20);
             this.txtBugID.TabIndex = 10;
@@ -136,33 +143,63 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(889, 138);
+            this.label1.Location = new System.Drawing.Point(341, 265);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Bug ID";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(314, 294);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Name";
+            // 
+            // Date
+            // 
+            this.Date.AutoSize = true;
+            this.Date.Location = new System.Drawing.Point(314, 320);
+            this.Date.Name = "Date";
+            this.Date.Size = new System.Drawing.Size(30, 13);
+            this.Date.TabIndex = 13;
+            this.Date.Text = "Date";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(306, 343);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Coment";
             // 
             // Developer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 570);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Date);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBugID);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnFixAndArchive);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtComent);
+            this.Controls.Add(this.txtDate);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.lsBug);
             this.Controls.Add(this.btnDisplayBugs);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewDeveloper);
             this.Controls.Add(this.btnBackPro);
             this.Name = "Developer";
             this.Text = "Developer";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Programmer_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeveloper)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,16 +208,19 @@
         #endregion
 
         private System.Windows.Forms.Button btnBackPro;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewDeveloper;
         private System.Windows.Forms.Button btnDisplayBugs;
         private System.Windows.Forms.ListBox lsBug;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtDate;
+        private System.Windows.Forms.TextBox txtComent;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnFixAndArchive;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtBugID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Date;
+        private System.Windows.Forms.Label label4;
     }
 }

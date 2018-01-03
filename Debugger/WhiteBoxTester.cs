@@ -55,6 +55,7 @@ namespace Debugger
                 txtClassName.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[6].Value.ToString();
                 txtLineNumber.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[7].Value.ToString();
                 txtMethod.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[8].Value.ToString();
+                txtCodeAuthor.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[9].Value.ToString();
             }
             else
             {
@@ -79,7 +80,7 @@ namespace Debugger
             String sqlCon = (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\vs\Debugger\BugDatabase.mdf;Integrated Security=True;Connect Timeout=30");                     
             SqlConnection con = new SqlConnection(sqlCon);
             con.Open();
-            SqlCommand selcmd = new SqlCommand("SELECT BugID, ApplicationName, BugSymptoms,BugTrigger,ProjectName,SourceFile,ClassName,LineNumber,Mehtod FROM BugTable WHERE BugID ='" + txtBugIdWBT.Text + "'", con);
+            SqlCommand selcmd = new SqlCommand("SELECT BugID, ApplicationName, BugSymptoms,BugTrigger,ProjectName,SourceFile,ClassName,LineNumber,Mehtod, CodeAuthor FROM BugTable WHERE BugID ='" + txtBugIdWBT.Text + "'", con);
             SqlDataReader mySqlDataReader = selcmd.ExecuteReader();
             while (mySqlDataReader.Read())
             {
@@ -93,7 +94,8 @@ namespace Debugger
                 txtSourceFile.Text = mySqlDataReader["SourceFile"].ToString();
                 txtClassName.Text = mySqlDataReader["ClassName"].ToString();
                 txtLineNumber.Text = mySqlDataReader["LineNumber"].ToString();
-                txtMethod.Text = mySqlDataReader["Mehtod"].ToString();        
+                txtMethod.Text = mySqlDataReader["Mehtod"].ToString();  
+                txtCodeAuthor.Text= mySqlDataReader["CodeAuthor"].ToString();
             }
             con.Close();
 

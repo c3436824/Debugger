@@ -347,7 +347,6 @@
         private System.Windows.Forms.TextBox txtClassName;
         private System.Windows.Forms.TextBox txtMethod;
         private System.Windows.Forms.TextBox txtLineNumber;
-        private System.Windows.Forms.Button btnAddToBug;
         private System.Windows.Forms.Label lblAppName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

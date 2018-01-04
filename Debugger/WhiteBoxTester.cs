@@ -16,6 +16,8 @@ namespace Debugger
         public WhiteBoxTester()
         {
             InitializeComponent();
+            displayData();
+           
         }
 
         private void btnBackWBT_Click(object sender, EventArgs e)                        //Switch back to main menu form
@@ -25,8 +27,7 @@ namespace Debugger
             main.ShowDialog();
         }
 
-      
-        private void btnDisplay_Click(object sender, EventArgs e)
+        public void displayData()
         {
             String sqlCon = (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\vs\Debugger\BugDatabase.mdf;Integrated Security=True;Connect Timeout=30");   // display all data in the datbase in a data grid view when the displayed button is pressed 
 
@@ -36,8 +37,13 @@ namespace Debugger
             SqlDataAdapter adapt = new SqlDataAdapter("SELECT * FROM BugTable", con);
             adapt.Fill(dt);
             dgvBugsWBT.DataSource = dt;
+            this.dgvBugsWBT.Columns["Name"].Visible = false;                                                                                                       // hide the three columns that the white box doesnt need to see
+            this.dgvBugsWBT.Columns["Date "].Visible = false;
+            this.dgvBugsWBT.Columns["Comment"].Visible = false;
             con.Close();
         }
+
+      
 
         private void dgvBugsWBT_CellClick(object sender, DataGridViewCellEventArgs e)                                                                                           // place selected data on the data grid view into the corisponding text boxes
         {
@@ -65,14 +71,16 @@ namespace Debugger
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            String bugID = txtBugIdWBT.Text;
             String sqlCon = (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\vs\Debugger\BugDatabase.mdf;Integrated Security=True;Connect Timeout=30");
             SqlConnection con = new SqlConnection(sqlCon);
 
             con.Open();
-            SqlCommand delcmd = new SqlCommand("DELETE FROM BugTable WHERE BugID ='" + txtBugIdWBT.Text + "'", con);                                                                   // Delete for bug form the bug database by id
+            SqlCommand delcmd = new SqlCommand("DELETE FROM BugTable WHERE BugID ='" + bugID + "'", con);                                                                   // Delete for bug form the bug database by id
             delcmd.ExecuteNonQuery();
             con.Close();
-            MessageBox.Show("Bug: "+txtBugIdWBT.Text+ " has been deleted");
+            MessageBox.Show("Bug: "+bugID + " has been deleted");
+            displayData();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)                                                                                                                       // Allow the WBT to browse bugs and selcet bugs through a data grid view 
@@ -120,6 +128,7 @@ namespace Debugger
                 addInfo.ExecuteNonQuery();
                 sqlCon.Close();
                 MessageBox.Show("Adition information has been added to Bug ID: "+ bugID);
+                displayData();
             }
             else
             {
@@ -136,7 +145,7 @@ namespace Debugger
             Application.Exit();
         }
 
-        private void txtLineNumber_KeyPress(object sender, KeyPressEventArgs e)                        // only allow didgits  to be entered into the line txt field
+        private void txtLineNumber_KeyPress(object sender, KeyPressEventArgs e)                        // only allow didgits  to be entered into the line textbox
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {

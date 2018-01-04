@@ -30,7 +30,6 @@
         {
             this.btnBackPro = new System.Windows.Forms.Button();
             this.dataGridViewDeveloper = new System.Windows.Forms.DataGridView();
-            this.btnDisplayBugs = new System.Windows.Forms.Button();
             this.lsBug = new System.Windows.Forms.ListBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtDate = new System.Windows.Forms.TextBox();
@@ -43,12 +42,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Date = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnViewArchivedBugs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeveloper)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBackPro
             // 
-            this.btnBackPro.Location = new System.Drawing.Point(12, 535);
+            this.btnBackPro.Location = new System.Drawing.Point(12, 463);
             this.btnBackPro.Name = "btnBackPro";
             this.btnBackPro.Size = new System.Drawing.Size(75, 23);
             this.btnBackPro.TabIndex = 0;
@@ -59,28 +59,18 @@
             // dataGridViewDeveloper
             // 
             this.dataGridViewDeveloper.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDeveloper.Location = new System.Drawing.Point(12, 21);
+            this.dataGridViewDeveloper.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewDeveloper.Name = "dataGridViewDeveloper";
-            this.dataGridViewDeveloper.Size = new System.Drawing.Size(855, 218);
+            this.dataGridViewDeveloper.Size = new System.Drawing.Size(1025, 227);
             this.dataGridViewDeveloper.TabIndex = 1;
             this.dataGridViewDeveloper.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // btnDisplayBugs
-            // 
-            this.btnDisplayBugs.Location = new System.Drawing.Point(933, 19);
-            this.btnDisplayBugs.Name = "btnDisplayBugs";
-            this.btnDisplayBugs.Size = new System.Drawing.Size(75, 23);
-            this.btnDisplayBugs.TabIndex = 2;
-            this.btnDisplayBugs.Text = "Display Bugs ";
-            this.btnDisplayBugs.UseVisualStyleBackColor = true;
-            this.btnDisplayBugs.Click += new System.EventHandler(this.btnDisplayBugs_Click);
             // 
             // lsBug
             // 
             this.lsBug.FormattingEnabled = true;
             this.lsBug.Location = new System.Drawing.Point(12, 245);
             this.lsBug.Name = "lsBug";
-            this.lsBug.Size = new System.Drawing.Size(231, 277);
+            this.lsBug.Size = new System.Drawing.Size(274, 212);
             this.lsBug.TabIndex = 3;
             // 
             // txtName
@@ -106,9 +96,9 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(933, 185);
+            this.btnSearch.Location = new System.Drawing.Point(573, 288);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(102, 23);
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Search ";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -116,7 +106,7 @@
             // 
             // btnFixAndArchive
             // 
-            this.btnFixAndArchive.Location = new System.Drawing.Point(269, 371);
+            this.btnFixAndArchive.Location = new System.Drawing.Point(573, 346);
             this.btnFixAndArchive.Name = "btnFixAndArchive";
             this.btnFixAndArchive.Size = new System.Drawing.Size(102, 23);
             this.btnFixAndArchive.TabIndex = 8;
@@ -126,9 +116,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(933, 214);
+            this.btnDelete.Location = new System.Drawing.Point(573, 317);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(102, 23);
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -137,13 +127,13 @@
             // 
             this.txtBugID.Location = new System.Drawing.Point(385, 265);
             this.txtBugID.Name = "txtBugID";
-            this.txtBugID.Size = new System.Drawing.Size(75, 20);
+            this.txtBugID.Size = new System.Drawing.Size(85, 20);
             this.txtBugID.TabIndex = 10;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(341, 265);
+            this.label1.Location = new System.Drawing.Point(314, 265);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 11;
@@ -176,11 +166,22 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Coment";
             // 
+            // btnViewArchivedBugs
+            // 
+            this.btnViewArchivedBugs.Location = new System.Drawing.Point(916, 464);
+            this.btnViewArchivedBugs.Name = "btnViewArchivedBugs";
+            this.btnViewArchivedBugs.Size = new System.Drawing.Size(117, 23);
+            this.btnViewArchivedBugs.TabIndex = 15;
+            this.btnViewArchivedBugs.Text = "View  Archived Bugs";
+            this.btnViewArchivedBugs.UseVisualStyleBackColor = true;
+            this.btnViewArchivedBugs.Click += new System.EventHandler(this.btnViewArchivedBugs_Click);
+            // 
             // Developer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 570);
+            this.ClientSize = new System.Drawing.Size(1045, 499);
+            this.Controls.Add(this.btnViewArchivedBugs);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Date);
             this.Controls.Add(this.label2);
@@ -193,7 +194,6 @@
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lsBug);
-            this.Controls.Add(this.btnDisplayBugs);
             this.Controls.Add(this.dataGridViewDeveloper);
             this.Controls.Add(this.btnBackPro);
             this.Name = "Developer";
@@ -209,7 +209,6 @@
 
         private System.Windows.Forms.Button btnBackPro;
         private System.Windows.Forms.DataGridView dataGridViewDeveloper;
-        private System.Windows.Forms.Button btnDisplayBugs;
         private System.Windows.Forms.ListBox lsBug;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtDate;
@@ -222,5 +221,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Date;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnViewArchivedBugs;
     }
 }

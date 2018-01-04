@@ -30,7 +30,6 @@
         {
             this.btnBackWBT = new System.Windows.Forms.Button();
             this.dgvBugsWBT = new System.Windows.Forms.DataGridView();
-            this.btnDisplay = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -73,19 +72,9 @@
             this.dgvBugsWBT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBugsWBT.Location = new System.Drawing.Point(12, 222);
             this.dgvBugsWBT.Name = "dgvBugsWBT";
-            this.dgvBugsWBT.Size = new System.Drawing.Size(1071, 264);
+            this.dgvBugsWBT.Size = new System.Drawing.Size(1058, 264);
             this.dgvBugsWBT.TabIndex = 1;
             this.dgvBugsWBT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugsWBT_CellClick);
-            // 
-            // btnDisplay
-            // 
-            this.btnDisplay.Location = new System.Drawing.Point(12, 193);
-            this.btnDisplay.Name = "btnDisplay";
-            this.btnDisplay.Size = new System.Drawing.Size(77, 23);
-            this.btnDisplay.TabIndex = 2;
-            this.btnDisplay.Text = "Display Bugs ";
-            this.btnDisplay.UseVisualStyleBackColor = true;
-            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
             // label1
             // 
@@ -295,7 +284,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 527);
+            this.ClientSize = new System.Drawing.Size(1084, 527);
             this.Controls.Add(this.txtCodeAuthor);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -320,7 +309,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnDisplay);
             this.Controls.Add(this.dgvBugsWBT);
             this.Controls.Add(this.btnBackWBT);
             this.Name = "WhiteBoxTester";
@@ -336,7 +324,6 @@
 
         private System.Windows.Forms.Button btnBackWBT;
         private System.Windows.Forms.DataGridView dgvBugsWBT;
-        private System.Windows.Forms.Button btnDisplay;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

@@ -43,5 +43,12 @@ namespace Debugger
         {
             Application.Exit();
         }
+
+        private void btnArchivedBugs_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ArchivedBugs archiveBugs = new ArchivedBugs();
+            archiveBugs.Show();
+        }
     }
 }

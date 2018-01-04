@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArchivedBugs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArchivedBugs.Designer.cs">
+      <DependentUpon>ArchivedBugs.cs</DependentUpon>
+    </Compile>
     <Compile Include="BlackBoxTester.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="WhiteBoxTester.Designer.cs">
       <DependentUpon>WhiteBoxTester.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ArchivedBugs.resx">
+      <DependentUpon>ArchivedBugs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BlackBoxTester.resx">
       <DependentUpon>BlackBoxTester.cs</DependentUpon>
     </EmbeddedResource>

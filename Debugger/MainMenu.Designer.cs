@@ -31,6 +31,7 @@
             this.btnBBT = new System.Windows.Forms.Button();
             this.btnWBT = new System.Windows.Forms.Button();
             this.btnDeveloper = new System.Windows.Forms.Button();
+            this.btnArchivedBugs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBBT
@@ -63,11 +64,22 @@
             this.btnDeveloper.UseVisualStyleBackColor = true;
             this.btnDeveloper.Click += new System.EventHandler(this.btnPro_Click);
             // 
+            // btnArchivedBugs
+            // 
+            this.btnArchivedBugs.Location = new System.Drawing.Point(70, 224);
+            this.btnArchivedBugs.Name = "btnArchivedBugs";
+            this.btnArchivedBugs.Size = new System.Drawing.Size(139, 50);
+            this.btnArchivedBugs.TabIndex = 3;
+            this.btnArchivedBugs.Text = "Archived Bugs";
+            this.btnArchivedBugs.UseVisualStyleBackColor = true;
+            this.btnArchivedBugs.Click += new System.EventHandler(this.btnArchivedBugs_Click);
+            // 
             // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 358);
+            this.Controls.Add(this.btnArchivedBugs);
             this.Controls.Add(this.btnDeveloper);
             this.Controls.Add(this.btnWBT);
             this.Controls.Add(this.btnBBT);
@@ -83,6 +95,7 @@
         private System.Windows.Forms.Button btnBBT;
         private System.Windows.Forms.Button btnWBT;
         private System.Windows.Forms.Button btnDeveloper;
+        private System.Windows.Forms.Button btnArchivedBugs;
     }
 }
 

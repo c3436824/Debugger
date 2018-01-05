@@ -67,7 +67,7 @@ namespace Debugger
             }
             else
             {
-                MessageBox.Show("please fill in all fileds ");
+                MessageBox.Show("Please fill in all fileds ");
             }
 
 

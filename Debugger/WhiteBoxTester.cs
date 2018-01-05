@@ -58,10 +58,12 @@ namespace Debugger
                 lbTrigger.Items.Add(dgvBugsWBT.Rows[e.RowIndex].Cells[3].Value.ToString());
                 txtProjectName.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[4].Value.ToString();
                 txtSourceFile.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[5].Value.ToString();
-                txtClassName.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[6].Value.ToString();
+                txtClassName.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[6].Value.ToString();   
                 txtLineNumber.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[7].Value.ToString();
                 txtMethod.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[8].Value.ToString();
-                txtCodeAuthor.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[9].Value.ToString();
+                txtCodeBlock.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[9].Value.ToString();
+                txtCodeAuthor.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[10].Value.ToString();
+                txtCodeSnipet.Text = dgvBugsWBT.Rows[e.RowIndex].Cells[11].Value.ToString();
             }
             else
             {
@@ -71,16 +73,23 @@ namespace Debugger
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            String bugID = txtBugIdWBT.Text;
-            String sqlCon = (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\vs\Debugger\BugDatabase.mdf;Integrated Security=True;Connect Timeout=30");
-            SqlConnection con = new SqlConnection(sqlCon);
+            if (txtBugIdWBT.Text != "")
+            {
+                String bugID = txtBugIdWBT.Text;
+                String sqlCon = (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\vs\Debugger\BugDatabase.mdf;Integrated Security=True;Connect Timeout=30");
 
-            con.Open();
-            SqlCommand delcmd = new SqlCommand("DELETE FROM BugTable WHERE BugID ='" + bugID + "'", con);                                                                   // Delete for bug form the bug database by id
-            delcmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Bug: "+bugID + " has been deleted");
-            displayData();
+                SqlConnection con = new SqlConnection(sqlCon);
+                con.Open();
+                SqlCommand delcmd = new SqlCommand("DELETE FROM BugTable WHERE BugID ='" + bugID + "'", con);                                                                   // Delete for bug form the bug database by id
+                delcmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("BUG: " + bugID + " HAS BEEN DELETED");
+                displayData();
+            }
+            else
+            {
+                MessageBox.Show("PLEASE ENTER OR SELECT THE BUG ID THAT YOU WISH TO DELETE");
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)                                                                                                                       // Allow the WBT to browse bugs and selcet bugs through a data grid view 
@@ -88,7 +97,7 @@ namespace Debugger
             String sqlCon = (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\vs\Debugger\BugDatabase.mdf;Integrated Security=True;Connect Timeout=30");                     
             SqlConnection con = new SqlConnection(sqlCon);
             con.Open();
-            SqlCommand selcmd = new SqlCommand("SELECT BugID, ApplicationName, BugSymptoms,BugTrigger,ProjectName,SourceFile,ClassName,LineNumber,Mehtod, CodeAuthor FROM BugTable WHERE BugID ='" + txtBugIdWBT.Text + "'", con);
+            SqlCommand selcmd = new SqlCommand("SELECT BugID, ApplicationName, BugSymptoms,BugTrigger,ProjectName,SourceFile,ClassName,LineNumber,Method,CodeBlock, CodeAuthor, SourceCode FROM BugTable WHERE BugID ='" + txtBugIdWBT.Text + "'", con);
             SqlDataReader mySqlDataReader = selcmd.ExecuteReader();
             while (mySqlDataReader.Read())
             {
@@ -102,8 +111,10 @@ namespace Debugger
                 txtSourceFile.Text = mySqlDataReader["SourceFile"].ToString();
                 txtClassName.Text = mySqlDataReader["ClassName"].ToString();
                 txtLineNumber.Text = mySqlDataReader["LineNumber"].ToString();
-                txtMethod.Text = mySqlDataReader["Mehtod"].ToString();  
+                txtMethod.Text = mySqlDataReader["Method"].ToString();
+                txtCodeBlock.Text = mySqlDataReader["CodeBlock"].ToString();
                 txtCodeAuthor.Text= mySqlDataReader["CodeAuthor"].ToString();
+                txtCodeSnipet.Text = mySqlDataReader["SourceCode"].ToString();
             }
             con.Close();
 
@@ -112,22 +123,25 @@ namespace Debugger
 
         private void addWBT_Click(object sender, EventArgs e)                                                                                                                          // Allows white box teseter add aditional information to the bug
         {
-            if (txtBugIdWBT.Text != "")
+            if (txtBugIdWBT.Text != "" )
             {
                 String projectName = txtProjectName.Text;
                 String sourceFile = txtSourceFile.Text;
                 String className = txtClassName.Text;
                 String lineNumber = txtLineNumber.Text;
+                String codeBlock = txtCodeBlock.Text;
                 String method = txtMethod.Text;
                 String bugID = txtBugIdWBT.Text;
                 String codeAuthor = txtCodeAuthor.Text;
+                String sourceCode = txtCodeSnipet.Text;
+              
 
                 SqlConnection sqlCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\vs\Debugger\BugDatabase.mdf;Integrated Security=True;Connect Timeout=30");
                 sqlCon.Open();
-                SqlCommand addInfo = new SqlCommand("UPDATE BugTable SET ProjectName ='" + projectName + "', SourceFile = '" + sourceFile + "', ClassName = '" + className + "' ,LineNumber = '" + lineNumber + "', Mehtod = '" + method + "', CodeAuthor = '" + codeAuthor + "' WHERE (BugID ='" + bugID + "')", sqlCon);
+                SqlCommand addInfo = new SqlCommand("UPDATE BugTable SET ProjectName ='" + projectName + "', SourceFile = '" + sourceFile + "', ClassName = '" + className + "' ,LineNumber = '" + lineNumber + "', Method = '" + method + "',  CodeBlock = '" + codeBlock + "', CodeAuthor = '" + codeAuthor + "', SourceCode = '" + sourceCode + "' WHERE (BugID ='" + bugID + "')", sqlCon);
                 addInfo.ExecuteNonQuery();
                 sqlCon.Close();
-                MessageBox.Show("Adition information has been added to Bug ID: "+ bugID);
+                MessageBox.Show("Aditional information has been added to BUG "+ bugID);
                 displayData();
             }
             else
@@ -139,7 +153,7 @@ namespace Debugger
 
 
         }
-
+        
         private void WhiteBoxTester_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -154,6 +168,12 @@ namespace Debugger
 
         }
 
-       
+        private void txtBugIdWBT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

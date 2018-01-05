@@ -54,12 +54,16 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtCodeAuthor = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtCodeBlock = new System.Windows.Forms.TextBox();
+            this.txtCodeSnipet = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugsWBT)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBackWBT
             // 
-            this.btnBackWBT.Location = new System.Drawing.Point(12, 492);
+            this.btnBackWBT.Location = new System.Drawing.Point(12, 711);
             this.btnBackWBT.Name = "btnBackWBT";
             this.btnBackWBT.Size = new System.Drawing.Size(75, 23);
             this.btnBackWBT.TabIndex = 0;
@@ -70,9 +74,9 @@
             // dgvBugsWBT
             // 
             this.dgvBugsWBT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBugsWBT.Location = new System.Drawing.Point(12, 222);
+            this.dgvBugsWBT.Location = new System.Drawing.Point(12, 440);
             this.dgvBugsWBT.Name = "dgvBugsWBT";
-            this.dgvBugsWBT.Size = new System.Drawing.Size(1058, 264);
+            this.dgvBugsWBT.Size = new System.Drawing.Size(1245, 264);
             this.dgvBugsWBT.TabIndex = 1;
             this.dgvBugsWBT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugsWBT_CellClick);
             // 
@@ -106,7 +110,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(281, 75);
+            this.label4.Location = new System.Drawing.Point(309, 50);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 6;
@@ -115,7 +119,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(284, 101);
+            this.label5.Location = new System.Drawing.Point(310, 102);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 7;
@@ -123,35 +127,35 @@
             // 
             // txtProjectName
             // 
-            this.txtProjectName.Location = new System.Drawing.Point(95, 72);
+            this.txtProjectName.Location = new System.Drawing.Point(121, 73);
             this.txtProjectName.Name = "txtProjectName";
             this.txtProjectName.Size = new System.Drawing.Size(159, 20);
             this.txtProjectName.TabIndex = 8;
             // 
             // txtSourceFile
             // 
-            this.txtSourceFile.Location = new System.Drawing.Point(95, 97);
+            this.txtSourceFile.Location = new System.Drawing.Point(121, 98);
             this.txtSourceFile.Name = "txtSourceFile";
             this.txtSourceFile.Size = new System.Drawing.Size(159, 20);
             this.txtSourceFile.TabIndex = 9;
             // 
             // txtClassName
             // 
-            this.txtClassName.Location = new System.Drawing.Point(95, 124);
+            this.txtClassName.Location = new System.Drawing.Point(121, 125);
             this.txtClassName.Name = "txtClassName";
             this.txtClassName.Size = new System.Drawing.Size(159, 20);
             this.txtClassName.TabIndex = 10;
             // 
             // txtMethod
             // 
-            this.txtMethod.Location = new System.Drawing.Point(361, 98);
+            this.txtMethod.Location = new System.Drawing.Point(387, 99);
             this.txtMethod.Name = "txtMethod";
             this.txtMethod.Size = new System.Drawing.Size(159, 20);
             this.txtMethod.TabIndex = 12;
             // 
             // txtLineNumber
             // 
-            this.txtLineNumber.Location = new System.Drawing.Point(361, 72);
+            this.txtLineNumber.Location = new System.Drawing.Point(387, 43);
             this.txtLineNumber.Name = "txtLineNumber";
             this.txtLineNumber.Size = new System.Drawing.Size(159, 20);
             this.txtLineNumber.TabIndex = 11;
@@ -160,7 +164,7 @@
             // lblAppName
             // 
             this.lblAppName.AutoSize = true;
-            this.lblAppName.Location = new System.Drawing.Point(878, 39);
+            this.lblAppName.Location = new System.Drawing.Point(913, 46);
             this.lblAppName.Name = "lblAppName";
             this.lblAppName.Size = new System.Drawing.Size(10, 13);
             this.lblAppName.TabIndex = 15;
@@ -178,7 +182,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(779, 39);
+            this.label7.Location = new System.Drawing.Point(814, 46);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 13);
             this.label7.TabIndex = 19;
@@ -187,7 +191,7 @@
             // lbSymptoms
             // 
             this.lbSymptoms.FormattingEnabled = true;
-            this.lbSymptoms.Location = new System.Drawing.Point(881, 68);
+            this.lbSymptoms.Location = new System.Drawing.Point(913, 78);
             this.lbSymptoms.Name = "lbSymptoms";
             this.lbSymptoms.Size = new System.Drawing.Size(165, 69);
             this.lbSymptoms.TabIndex = 20;
@@ -195,7 +199,7 @@
             // lbTrigger
             // 
             this.lbTrigger.FormattingEnabled = true;
-            this.lbTrigger.Location = new System.Drawing.Point(878, 147);
+            this.lbTrigger.Location = new System.Drawing.Point(910, 157);
             this.lbTrigger.Name = "lbTrigger";
             this.lbTrigger.Size = new System.Drawing.Size(168, 69);
             this.lbTrigger.TabIndex = 21;
@@ -203,7 +207,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(795, 70);
+            this.label8.Location = new System.Drawing.Point(827, 80);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 13);
             this.label8.TabIndex = 22;
@@ -212,7 +216,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(807, 147);
+            this.label9.Location = new System.Drawing.Point(839, 157);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 13);
             this.label9.TabIndex = 23;
@@ -220,7 +224,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(566, 100);
+            this.btnDelete.Location = new System.Drawing.Point(656, 364);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(108, 23);
             this.btnDelete.TabIndex = 24;
@@ -230,14 +234,15 @@
             // 
             // txtBugIdWBT
             // 
-            this.txtBugIdWBT.Location = new System.Drawing.Point(95, 46);
+            this.txtBugIdWBT.Location = new System.Drawing.Point(121, 47);
             this.txtBugIdWBT.Name = "txtBugIdWBT";
             this.txtBugIdWBT.Size = new System.Drawing.Size(159, 20);
             this.txtBugIdWBT.TabIndex = 26;
+            this.txtBugIdWBT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBugIdWBT_KeyPress);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(566, 69);
+            this.btnSearch.Location = new System.Drawing.Point(656, 333);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(108, 23);
             this.btnSearch.TabIndex = 27;
@@ -247,7 +252,7 @@
             // 
             // addWBT
             // 
-            this.addWBT.Location = new System.Drawing.Point(566, 129);
+            this.addWBT.Location = new System.Drawing.Point(656, 393);
             this.addWBT.Name = "addWBT";
             this.addWBT.Size = new System.Drawing.Size(108, 23);
             this.addWBT.TabIndex = 28;
@@ -267,7 +272,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(284, 128);
+            this.label11.Location = new System.Drawing.Point(310, 129);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 13);
             this.label11.TabIndex = 30;
@@ -275,16 +280,53 @@
             // 
             // txtCodeAuthor
             // 
-            this.txtCodeAuthor.Location = new System.Drawing.Point(361, 128);
+            this.txtCodeAuthor.Location = new System.Drawing.Point(387, 129);
             this.txtCodeAuthor.Name = "txtCodeAuthor";
             this.txtCodeAuthor.Size = new System.Drawing.Size(159, 20);
             this.txtCodeAuthor.TabIndex = 31;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(309, 75);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 13);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Code Block";
+            // 
+            // txtCodeBlock
+            // 
+            this.txtCodeBlock.Location = new System.Drawing.Point(387, 70);
+            this.txtCodeBlock.Name = "txtCodeBlock";
+            this.txtCodeBlock.Size = new System.Drawing.Size(159, 20);
+            this.txtCodeBlock.TabIndex = 33;
+            // 
+            // txtCodeSnipet
+            // 
+            this.txtCodeSnipet.Location = new System.Drawing.Point(121, 178);
+            this.txtCodeSnipet.Multiline = true;
+            this.txtCodeSnipet.Name = "txtCodeSnipet";
+            this.txtCodeSnipet.Size = new System.Drawing.Size(499, 238);
+            this.txtCodeSnipet.TabIndex = 34;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(9, 181);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(105, 13);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "Enter Code Snippet: ";
             // 
             // WhiteBoxTester
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 527);
+            this.ClientSize = new System.Drawing.Size(1269, 746);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtCodeSnipet);
+            this.Controls.Add(this.txtCodeBlock);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.txtCodeAuthor);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -348,5 +390,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtCodeAuthor;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtCodeBlock;
+        private System.Windows.Forms.TextBox txtCodeSnipet;
+        private System.Windows.Forms.Label label13;
     }
 }

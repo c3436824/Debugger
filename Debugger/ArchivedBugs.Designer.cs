@@ -40,6 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.webSourceCode = new System.Windows.Forms.WebBrowser();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArchivedBugs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,9 +65,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(678, 603);
+            this.btnDelete.Location = new System.Drawing.Point(1358, 643);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(120, 23);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete Bug";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -97,7 +99,7 @@
             // 
             // txtBugID
             // 
-            this.txtBugID.Location = new System.Drawing.Point(690, 577);
+            this.txtBugID.Location = new System.Drawing.Point(1415, 617);
             this.txtBugID.Name = "txtBugID";
             this.txtBugID.Size = new System.Drawing.Size(63, 20);
             this.txtBugID.TabIndex = 7;
@@ -106,38 +108,42 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(641, 580);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1355, 618);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Bug ID:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 299);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.Size = new System.Drawing.Size(165, 17);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Black Box Tester:";
+            this.label2.Text = "Black Box Tester Report:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(258, 299);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 13);
+            this.label3.Size = new System.Drawing.Size(167, 17);
             this.label3.TabIndex = 10;
-            this.label3.Text = "White Box Tester:";
+            this.label3.Text = "White Box Tester Report:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(507, 304);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(507, 299);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.Size = new System.Drawing.Size(124, 17);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Developer";
+            this.label4.Text = "Developer Report:";
             // 
             // webSourceCode
             // 
@@ -147,11 +153,33 @@
             this.webSourceCode.Size = new System.Drawing.Size(790, 250);
             this.webSourceCode.TabIndex = 12;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(756, 299);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 17);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Source Code:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(1286, 584);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(231, 17);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "To delete please enter Bug ID:";
+            // 
             // ArchivedBugs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1561, 727);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.webSourceCode);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -187,5 +215,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.WebBrowser webSourceCode;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

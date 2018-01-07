@@ -40,12 +40,12 @@ namespace Debugger
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BlackBoxTester_FormClosed(object sender, FormClosedEventArgs e)    // close application 
+        private void BlackBoxTester_FormClosed(object sender, FormClosedEventArgs e)   
         {
             Application.Exit();
         }
         /// <summary>
-        /// Insert bug information the user has enetered into the database
+        /// Insert bug information the user has entered into the database
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -55,9 +55,9 @@ namespace Debugger
             String bugSym = txtBugSym.Text;
             String bugTrig = txtBugTrig.Text;
 
-            if (appName != "" && bugSym != "" && bugTrig != "")
+            if (appName != "" && bugSym != "" && bugTrig != "")                                                        // Check if the user has filled in all text boxs if not notify the user 
             {
-                String SqlCon = (@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = F:\vs\Debugger\BugDatabase.mdf; Integrated Security = True; Connect Timeout = 30");   // point to the locaton of the database
+                String SqlCon = (@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = F:\vs\Debugger\BugDatabase.mdf; Integrated Security = True; Connect Timeout = 30");  
                 String insert = "INSERT INTO BugTable (ApplicationName, BugSymptoms, BugTrigger)" + "Values('" + appName + "','" + bugSym + "','" + bugTrig + "')";
 
                 using (SqlConnection insertConection = new SqlConnection(SqlCon))
@@ -67,7 +67,7 @@ namespace Debugger
                         insertConection.Open();
                         command.ExecuteNonQuery();
                         insertConection.Close();
-                        MessageBox.Show("Bug Added");
+                        MessageBox.Show("Bug Added", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtAppName.Text = "";
                         txtBugSym.Text = "";
                         txtBugTrig.Text = "";
@@ -76,7 +76,7 @@ namespace Debugger
             }
             else
             {
-                MessageBox.Show("Please fill in all fileds ");
+                MessageBox.Show("Please fill in all fileds ", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

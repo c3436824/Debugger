@@ -42,6 +42,8 @@
             this.webSourceCode = new System.Windows.Forms.WebBrowser();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnDisplay = new System.Windows.Forms.Button();
+            this.btnNotFixed = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArchivedBugs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +67,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(1358, 643);
+            this.btnDelete.Location = new System.Drawing.Point(357, 638);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(120, 23);
             this.btnDelete.TabIndex = 3;
@@ -99,7 +101,7 @@
             // 
             // txtBugID
             // 
-            this.txtBugID.Location = new System.Drawing.Point(1415, 617);
+            this.txtBugID.Location = new System.Drawing.Point(414, 583);
             this.txtBugID.Name = "txtBugID";
             this.txtBugID.Size = new System.Drawing.Size(63, 20);
             this.txtBugID.TabIndex = 7;
@@ -109,7 +111,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1355, 618);
+            this.label1.Location = new System.Drawing.Point(354, 584);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 8;
@@ -150,7 +152,7 @@
             this.webSourceCode.Location = new System.Drawing.Point(759, 321);
             this.webSourceCode.MinimumSize = new System.Drawing.Size(20, 20);
             this.webSourceCode.Name = "webSourceCode";
-            this.webSourceCode.Size = new System.Drawing.Size(790, 250);
+            this.webSourceCode.Size = new System.Drawing.Size(790, 369);
             this.webSourceCode.TabIndex = 12;
             // 
             // label5
@@ -166,18 +168,40 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1286, 584);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 581);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(231, 17);
+            this.label6.Size = new System.Drawing.Size(336, 17);
             this.label6.TabIndex = 14;
-            this.label6.Text = "To delete please enter Bug ID:";
+            this.label6.Text = "To delete or report as not fixed please enter Bug ID:";
+            // 
+            // btnDisplay
+            // 
+            this.btnDisplay.Location = new System.Drawing.Point(357, 609);
+            this.btnDisplay.Name = "btnDisplay";
+            this.btnDisplay.Size = new System.Drawing.Size(120, 23);
+            this.btnDisplay.TabIndex = 15;
+            this.btnDisplay.Text = "Display Bug";
+            this.btnDisplay.UseVisualStyleBackColor = true;
+            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
+            // 
+            // btnNotFixed
+            // 
+            this.btnNotFixed.Location = new System.Drawing.Point(357, 667);
+            this.btnNotFixed.Name = "btnNotFixed";
+            this.btnNotFixed.Size = new System.Drawing.Size(120, 23);
+            this.btnNotFixed.TabIndex = 16;
+            this.btnNotFixed.Text = "Bug Not Fixed";
+            this.btnNotFixed.UseVisualStyleBackColor = true;
+            this.btnNotFixed.Click += new System.EventHandler(this.btnNotFixed_Click);
             // 
             // ArchivedBugs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1561, 727);
+            this.Controls.Add(this.btnNotFixed);
+            this.Controls.Add(this.btnDisplay);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.webSourceCode);
@@ -217,5 +241,7 @@
         private System.Windows.Forms.WebBrowser webSourceCode;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnDisplay;
+        private System.Windows.Forms.Button btnNotFixed;
     }
 }

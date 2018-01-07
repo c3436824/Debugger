@@ -111,7 +111,7 @@
             // 
             // btnFixAndArchive
             // 
-            this.btnFixAndArchive.Location = new System.Drawing.Point(578, 207);
+            this.btnFixAndArchive.Location = new System.Drawing.Point(578, 201);
             this.btnFixAndArchive.Name = "btnFixAndArchive";
             this.btnFixAndArchive.Size = new System.Drawing.Size(102, 23);
             this.btnFixAndArchive.TabIndex = 8;

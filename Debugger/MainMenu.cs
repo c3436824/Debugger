@@ -16,34 +16,56 @@ namespace Debugger
         {
             InitializeComponent();
         }
-
-        private void btnBBT_Click(object sender, EventArgs e)    //Switch too black box tester form  
+        /// <summary>
+        /// Switch to black box tester form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnBBT_Click(object sender, EventArgs e)      
         {
             this.Hide();
             BlackBoxTester BBT = new BlackBoxTester();
             BBT.ShowDialog();
         }
-
-        private void btnWBT_Click(object sender, EventArgs e)    //Switch too white box tester form
+        /// <summary>
+        ///  Switch to white box tester form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnWBT_Click(object sender, EventArgs e)   
         {
             this.Hide();
             WhiteBoxTester WBT = new WhiteBoxTester();
             WBT.ShowDialog();
         }
 
-        private void btnPro_Click(object sender, EventArgs e)     //Switch too Programmer form 
+        /// <summary>
+        /// Switch to developer form 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPro_Click(object sender, EventArgs e)     
         {
             this.Hide();
             Developer Pro = new Developer();
             Pro.ShowDialog();
 
         }
-
-        private void mainMenu_FormClosed(object sender, FormClosedEventArgs e)  // Closed the Application completely
+        /// <summary>
+        /// Exit Application entirely
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mainMenu_FormClosed(object sender, FormClosedEventArgs e)  
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Switch to the devloper form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnArchivedBugs_Click(object sender, EventArgs e)
         {
             this.Hide();
